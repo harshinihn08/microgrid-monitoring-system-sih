@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { SystemChart } from "@/components/dashboard/SystemChart";
 import { MetricCard } from "@/components/dashboard/MetricCard";
+import { RealTimeMetricCard } from "@/components/dashboard/RealTimeMetricCard";
 
 const AnalyticsPage = () => {
   const [timeRange, setTimeRange] = useState("7d");
@@ -110,13 +111,16 @@ const AnalyticsPage = () => {
       {/* Key Analytics Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {analyticsMetrics.map((metric, index) => (
-          <MetricCard
+          <RealTimeMetricCard
             key={index}
             title={metric.label}
-            value={metric.value}
+            value={metric.value.split(' ')[0]}
+            unit={` ${metric.value.split(' ')[1] || ''}`}
             icon={metric.icon}
             trend={metric.trend}
             className={index === 0 ? "bg-gradient-energy text-white" : index === 2 ? "bg-gradient-success text-white" : ""}
+            updateInterval={index === 0 ? 2000 : index === 1 ? 2500 : index === 2 ? 3000 : 3500}
+            valueRange={index === 0 ? [0.95, 1.15] : index === 1 ? [0.9, 1.1] : index === 2 ? [0.98, 1.02] : [0.985, 1.005]}
           />
         ))}
       </div>

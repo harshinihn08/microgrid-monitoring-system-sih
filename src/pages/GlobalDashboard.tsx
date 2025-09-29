@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { mockMicrogrids, calculateSystemMetrics, mockAlerts } from "@/lib/mockData";
 import { MetricCard } from "@/components/dashboard/MetricCard";
+import { RealTimeMetricCard } from "@/components/dashboard/RealTimeMetricCard";
 import { NetworkMap } from "@/components/dashboard/NetworkMap";
 import { SystemChart } from "@/components/dashboard/SystemChart";
 import { AlertsPanel } from "@/components/dashboard/AlertsPanel";
@@ -57,31 +58,39 @@ const GlobalDashboard = () => {
 
       {/* Key Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <MetricCard
+        <RealTimeMetricCard
           title="Total Generation"
-          value={`${systemMetrics.totalGeneration.toLocaleString()} kW`}
-          icon={<Zap className="h-5 w-5" />}
+          value={`${systemMetrics.totalGeneration.toLocaleString()}`}
+          unit=" kW"
+          icon={<Zap className="h-5 w-5 text-primary" />}
           trend={"+5.2%"}
           className="bg-gradient-energy text-white"
+          valueRange={[0.9, 1.2]}
         />
-        <MetricCard
+        <RealTimeMetricCard
           title="Total Demand"
-          value={`${systemMetrics.totalDemand.toLocaleString()} kW`}
-          icon={<TrendingUp className="h-5 w-5" />}
+          value={`${systemMetrics.totalDemand.toLocaleString()}`}
+          unit=" kW"
+          icon={<TrendingUp className="h-5 w-5 text-primary" />}
           trend={"+2.1%"}
+          valueRange={[0.85, 1.15]}
         />
-        <MetricCard
+        <RealTimeMetricCard
           title="Battery Storage"
-          value={`${systemMetrics.totalBatteryStorage.toLocaleString()} kWh`}
-          icon={<Battery className="h-5 w-5" />}
+          value={`${systemMetrics.totalBatteryStorage.toLocaleString()}`}
+          unit=" kWh"
+          icon={<Battery className="h-5 w-5 text-primary" />}
           trend={"-1.3%"}
           className="bg-gradient-success text-white"
+          valueRange={[0.95, 1.05]}
         />
-        <MetricCard
+        <RealTimeMetricCard
           title="Average SOC"
-          value={`${systemMetrics.averageSOC}%`}
-          icon={<Activity className="h-5 w-5" />}
+          value={`${systemMetrics.averageSOC}`}
+          unit="%"
+          icon={<Activity className="h-5 w-5 text-primary" />}
           trend="+0.8%"
+          valueRange={[0.92, 1.08]}
         />
       </div>
 
