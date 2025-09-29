@@ -6,112 +6,115 @@
 
 @layer base {
   :root {
-    /* Energy Sector Color Palette */
-    --background: 0 0% 100%;
-    --foreground: 215 25% 26.9%;
+    /* Dark Theme - Cool UI Design */
+    --background: 220 30% 8%;
+    --foreground: 210 40% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 26.9%;
+    --card: 220 25% 12%;
+    --card-foreground: 210 40% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 26.9%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 40% 95%;
 
-    /* Energy Blue - Primary brand color */
-    --primary: 200 98% 39%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 200 95% 60%;
+    /* Cyber Blue - Primary brand color */
+    --primary: 200 100% 60%;
+    --primary-foreground: 220 30% 8%;
+    --primary-glow: 200 100% 70%;
 
-    /* Energy Green - Success states */
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
-    --success-glow: 142 69% 58%;
+    /* Neon Green - Success states */
+    --success: 142 80% 50%;
+    --success-foreground: 220 30% 8%;
+    --success-glow: 142 80% 60%;
 
-    /* Warning Amber */
-    --warning: 45 93% 47%;
-    --warning-foreground: 0 0% 100%;
+    /* Electric Amber - Warning */
+    --warning: 45 100% 55%;
+    --warning-foreground: 220 30% 8%;
 
-    /* Critical Red */
-    --critical: 0 84% 60%;
-    --critical-foreground: 0 0% 100%;
+    /* Hot Pink - Critical */
+    --critical: 340 100% 65%;
+    --critical-foreground: 220 30% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 215 25% 26.9%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 40% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 200 50% 95%;
-    --accent-foreground: 200 98% 39%;
+    --accent: 220 20% 20%;
+    --accent-foreground: 200 100% 60%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 340 100% 65%;
+    --destructive-foreground: 220 30% 8%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 200 98% 39%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 200 100% 60%;
 
     --radius: 0.75rem;
 
-    /* Professional Dashboard Gradients */
+    /* Futuristic Gradients */
     --gradient-energy: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(200 95% 60%) 50%, hsl(142 69% 58%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(200 100% 60%) 0%, hsl(280 100% 70%) 50%, hsl(142 80% 60%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 12%) 0%, hsl(220 20% 16%) 100%);
+    --gradient-cyber: linear-gradient(135deg, hsl(200 100% 60%) 0%, hsl(280 100% 70%) 100%);
 
-    /* Professional Shadows */
-    --shadow-energy: 0 10px 30px -10px hsl(var(--primary) / 0.3);
-    --shadow-success: 0 10px 30px -10px hsl(var(--success) / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(215 25% 26.9% / 0.1);
-    --shadow-hover: 0 8px 30px -8px hsl(215 25% 26.9% / 0.15);
+    /* Glowing Shadows */
+    --shadow-energy: 0 0 30px hsl(var(--primary) / 0.3), 0 10px 20px hsl(var(--primary) / 0.1);
+    --shadow-success: 0 0 30px hsl(var(--success) / 0.3), 0 10px 20px hsl(var(--success) / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.5);
+    --shadow-hover: 0 8px 30px -8px hsl(200 100% 60% / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
 
     /* Sidebar Design */
-    --sidebar-background: 215 30% 18%;
+    --sidebar-background: 220 35% 5%;
     --sidebar-foreground: 210 40% 85%;
-    --sidebar-primary: 200 98% 39%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 25%;
+    --sidebar-primary: 200 100% 60%;
+    --sidebar-primary-foreground: 220 30% 8%;
+    --sidebar-accent: 220 25% 15%;
     --sidebar-accent-foreground: 210 40% 90%;
-    --sidebar-border: 215 25% 25%;
-    --sidebar-ring: 200 98% 39%;
+    --sidebar-border: 220 25% 20%;
+    --sidebar-ring: 200 100% 60%;
 
     /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-glow: all 0.4s ease-in-out;
   }
 
-  .dark {
-    --background: 215 30% 15%;
+  .light {
+    --background: 220 30% 8%;
     --foreground: 210 40% 95%;
 
-    --card: 215 28% 18%;
+    --card: 220 25% 12%;
     --card-foreground: 210 40% 95%;
 
-    --popover: 215 28% 18%;
+    --popover: 220 25% 12%;
     --popover-foreground: 210 40% 95%;
 
-    --primary: 200 98% 55%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 200 100% 60%;
+    --primary-foreground: 220 30% 8%;
 
-    --secondary: 215 25% 25%;
+    --secondary: 220 20% 18%;
     --secondary-foreground: 210 40% 95%;
 
-    --muted: 215 25% 25%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 215 25% 25%;
-    --accent-foreground: 200 98% 55%;
+    --accent: 220 20% 20%;
+    --accent-foreground: 200 100% 60%;
 
-    --border: 215 25% 25%;
-    --input: 215 25% 25%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
 
-    --gradient-card: linear-gradient(145deg, hsl(215 28% 18%) 0%, hsl(215 25% 22%) 100%);
-    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 12%) 0%, hsl(220 20% 16%) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.5);
 
-    --sidebar-background: 215 35% 12%;
+    --sidebar-background: 220 35% 5%;
     --sidebar-foreground: 210 40% 85%;
-    --sidebar-accent: 215 30% 20%;
+    --sidebar-accent: 220 25% 15%;
     --sidebar-accent-foreground: 210 40% 90%;
-    --sidebar-border: 215 30% 20%;
+    --sidebar-border: 220 25% 20%;
   }
 }
 

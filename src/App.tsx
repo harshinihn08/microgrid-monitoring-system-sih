@@ -20,10 +20,11 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <SidebarProvider>
+      <div className="dark">
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <SidebarProvider>
           <Routes>
             <Route path="/" element={<DashboardLayout />}>
               <Route index element={<GlobalDashboard />} />
@@ -39,6 +40,7 @@ const App = () => (
           </Routes>
         </SidebarProvider>
       </BrowserRouter>
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );

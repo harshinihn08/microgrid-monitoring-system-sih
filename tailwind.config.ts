@@ -77,12 +77,14 @@ export default {
         "gradient-success": "var(--gradient-success)",
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
+        "gradient-cyber": "var(--gradient-cyber)",
       },
       boxShadow: {
         "energy": "var(--shadow-energy)",
         "success": "var(--shadow-success)",
         "card": "var(--shadow-card)",
         "hover": "var(--shadow-hover)",
+        "glow": "var(--shadow-glow)",
       },
       transitionTimingFunction: {
         "smooth": "var(--transition-smooth)",
