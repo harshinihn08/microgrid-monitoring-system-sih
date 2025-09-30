@@ -16,6 +16,7 @@ import {
 import { SystemChart } from "@/components/dashboard/SystemChart";
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { RealTimeMetricCard } from "@/components/dashboard/RealTimeMetricCard";
+import { RealTimeLineChart } from "@/components/dashboard/RealTimeLineChart";
 
 const AnalyticsPage = () => {
   const [timeRange, setTimeRange] = useState("7d");
@@ -127,29 +128,48 @@ const AnalyticsPage = () => {
 
       {/* Performance Charts */}
       <div className="grid lg:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <BarChart3 className="h-5 w-5" />
-              Energy Generation Trends
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="h-[300px]">
-            <SystemChart type="area" title="" />
-          </CardContent>
-        </Card>
+        <RealTimeLineChart 
+          title="Energy Generation Trends"
+          dataKey="generation"
+          color="hsl(var(--primary))"
+          unit=" kW"
+          height={280}
+        />
+        
+        <RealTimeLineChart 
+          title="System Efficiency Analysis"
+          dataKey="efficiency"
+          color="hsl(var(--success))"
+          unit="%"
+          height={280}
+        />
+      </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Activity className="h-5 w-5" />
-              System Efficiency Analysis
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="h-[300px]">
-            <SystemChart type="line" title="" />
-          </CardContent>
-        </Card>
+      {/* Additional Real-Time Charts */}
+      <div className="grid lg:grid-cols-3 gap-6">
+        <RealTimeLineChart 
+          title="Battery SOC Monitoring"
+          dataKey="soc"
+          color="hsl(var(--warning))"
+          unit="%"
+          height={220}
+        />
+        
+        <RealTimeLineChart 
+          title="Power Demand Analysis"
+          dataKey="demand"
+          color="hsl(var(--critical))"
+          unit=" kW"
+          height={220}
+        />
+        
+        <RealTimeLineChart 
+          title="Temperature Monitoring"
+          dataKey="temperature"
+          color="hsl(var(--info))"
+          unit="°C"
+          height={220}
+        />
       </div>
 
       {/* Performance Insights */}
@@ -196,46 +216,69 @@ const AnalyticsPage = () => {
 
       {/* Detailed Analytics Charts */}
       <div className="grid lg:grid-cols-3 gap-6">
-        <Card>
+        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
           <CardHeader>
-            <CardTitle className="text-sm">Load Distribution</CardTitle>
+            <CardTitle className="text-sm flex items-center justify-between">
+              Load Distribution
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            </CardTitle>
           </CardHeader>
           <CardContent className="h-[200px]">
             <SystemChart type="pie" title="" />
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
           <CardHeader>
-            <CardTitle className="text-sm">Peak vs Off-Peak Usage</CardTitle>
+            <CardTitle className="text-sm flex items-center justify-between">
+              Peak vs Off-Peak Usage
+              <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
+            </CardTitle>
           </CardHeader>
           <CardContent className="h-[200px]">
             <SystemChart type="bar" title="" />
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
           <CardHeader>
-            <CardTitle className="text-sm">Monthly Comparison</CardTitle>
+            <CardTitle className="text-sm flex items-center justify-between">
+              Generation vs Demand
+              <div className="w-2 h-2 rounded-full bg-warning animate-pulse" />
+            </CardTitle>
           </CardHeader>
           <CardContent className="h-[200px]">
-            <SystemChart type="line" title="" />
+            <SystemChart type="area" title="" />
           </CardContent>
         </Card>
       </div>
 
-      {/* Forecasting */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Calendar className="h-5 w-5" />
-            7-Day Generation Forecast
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="h-[300px]">
-          <SystemChart type="area" title="" />
-        </CardContent>
-      </Card>
+      {/* Real-Time System Overview */}
+      <div className="grid lg:grid-cols-2 gap-6">
+        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Calendar className="h-5 w-5" />
+              7-Day Generation Forecast
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="h-[300px]">
+            <SystemChart type="area" title="" />
+          </CardContent>
+        </Card>
+
+        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Activity className="h-5 w-5" />
+              Real-Time System Performance
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="h-[300px]">
+            <SystemChart type="line" title="" />
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };

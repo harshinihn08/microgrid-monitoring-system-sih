@@ -49,7 +49,7 @@ const AlertsPage = () => {
           ][Math.floor(Math.random() * 5)],
           microgridId: mgId,
           microgridName: mgId,
-          timestamp: new Date(),
+          timestamp: new Date().toISOString(),
           isRead: false
         };
         
