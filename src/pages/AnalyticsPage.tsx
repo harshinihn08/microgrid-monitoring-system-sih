@@ -166,7 +166,7 @@ const AnalyticsPage = () => {
         <RealTimeLineChart 
           title="Temperature Monitoring"
           dataKey="temperature"
-          color="hsl(var(--info))"
+          color="hsl(220 70% 60%)"
           unit="°C"
           height={220}
         />
@@ -216,68 +216,48 @@ const AnalyticsPage = () => {
 
       {/* Detailed Analytics Charts */}
       <div className="grid lg:grid-cols-3 gap-6">
-        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="text-sm flex items-center justify-between">
-              Load Distribution
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="h-[200px]">
-            <SystemChart type="pie" title="" />
-          </CardContent>
-        </Card>
-
-        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="text-sm flex items-center justify-between">
-              Peak vs Off-Peak Usage
-              <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="h-[200px]">
-            <SystemChart type="bar" title="" />
-          </CardContent>
-        </Card>
-
-        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="text-sm flex items-center justify-between">
-              Generation vs Demand
-              <div className="w-2 h-2 rounded-full bg-warning animate-pulse" />
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="h-[200px]">
-            <SystemChart type="area" title="" />
-          </CardContent>
-        </Card>
+        <RealTimeLineChart 
+          title="Load Distribution"
+          dataKey="generation"
+          color="hsl(var(--primary))"
+          unit=" kW"
+          height={220}
+        />
+        
+        <RealTimeLineChart 
+          title="Peak vs Off-Peak Usage"
+          dataKey="demand"
+          color="hsl(var(--success))"
+          unit=" kW"
+          height={220}
+        />
+        
+        <RealTimeLineChart 
+          title="Generation vs Demand"
+          dataKey="efficiency"
+          color="hsl(var(--warning))"
+          unit="%"
+          height={220}
+        />
       </div>
 
       {/* Real-Time System Overview */}
       <div className="grid lg:grid-cols-2 gap-6">
-        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Calendar className="h-5 w-5" />
-              7-Day Generation Forecast
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="h-[300px]">
-            <SystemChart type="area" title="" />
-          </CardContent>
-        </Card>
+        <RealTimeLineChart 
+          title="7-Day Generation Forecast"
+          dataKey="generation"
+          color="hsl(142 70% 45%)"
+          unit=" kW"
+          height={300}
+        />
 
-        <Card className="bg-gradient-card border-border/50 shadow-card hover:shadow-hover transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Activity className="h-5 w-5" />
-              Real-Time System Performance
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="h-[300px]">
-            <SystemChart type="line" title="" />
-          </CardContent>
-        </Card>
+        <RealTimeLineChart 
+          title="Real-Time System Performance"
+          dataKey="efficiency"
+          color="hsl(280 70% 60%)"
+          unit="%"
+          height={300}
+        />
       </div>
     </div>
   );

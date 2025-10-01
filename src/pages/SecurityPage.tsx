@@ -57,35 +57,35 @@ const SecurityPage = () => {
 
   const securityLogs = [
     {
-      timestamp: "2025-01-15 14:32:10",
+      timestamp: "2025-10-01 14:32:10",
       event: "User login successful",
       user: "admin@gridwatch.com",
       ip: "192.168.1.100",
       status: "success"
     },
     {
-      timestamp: "2025-01-15 14:15:45", 
+      timestamp: "2025-10-01 14:15:45", 
       event: "Security scan completed",
       user: "System",
       ip: "Local",
       status: "info"
     },
     {
-      timestamp: "2025-01-15 13:58:23",
+      timestamp: "2025-10-01 13:58:23",
       event: "Failed login attempt",
       user: "unknown@example.com", 
       ip: "203.145.67.89",
       status: "warning"
     },
     {
-      timestamp: "2025-01-15 13:45:12",
+      timestamp: "2025-10-01 13:45:12",
       event: "Encryption key rotated",
       user: "System",
       ip: "Local", 
       status: "success"
     },
     {
-      timestamp: "2025-01-15 13:30:05",
+      timestamp: "2025-10-01 13:30:05",
       event: "Firewall rule updated",
       user: "admin@gridwatch.com",
       ip: "192.168.1.100",

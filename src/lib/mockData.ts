@@ -53,8 +53,8 @@ export const mockMicrogrids: Microgrid[] = [
     efficiency: 93.3,
     ratedVoltage: 415,
     ratedCurrent: 650,
-    lastMaintenance: '2025-01-15',
-    nextMaintenance: '2025-04-15',
+    lastMaintenance: '2025-08-15',
+    nextMaintenance: '2025-11-15',
     isOnline: true,
   },
   {
@@ -71,8 +71,8 @@ export const mockMicrogrids: Microgrid[] = [
     efficiency: 85.2,
     ratedVoltage: 415,
     ratedCurrent: 500,
-    lastMaintenance: '2024-12-20',
-    nextMaintenance: '2025-03-20',
+    lastMaintenance: '2025-07-20',
+    nextMaintenance: '2025-10-20',
     isOnline: true,
   },
   {
@@ -89,8 +89,8 @@ export const mockMicrogrids: Microgrid[] = [
     efficiency: 91.8,
     ratedVoltage: 415,
     ratedCurrent: 580,
-    lastMaintenance: '2025-01-01',
-    nextMaintenance: '2025-04-01',
+    lastMaintenance: '2025-09-01',
+    nextMaintenance: '2025-12-01',
     isOnline: true,
   },
   {
@@ -107,8 +107,8 @@ export const mockMicrogrids: Microgrid[] = [
     efficiency: 72.5,
     ratedVoltage: 415,
     ratedCurrent: 400,
-    lastMaintenance: '2024-11-10',
-    nextMaintenance: '2025-02-10',
+    lastMaintenance: '2025-06-10',
+    nextMaintenance: '2025-09-10',
     isOnline: false,
   },
   {
@@ -125,8 +125,8 @@ export const mockMicrogrids: Microgrid[] = [
     efficiency: 96.1,
     ratedVoltage: 415,
     ratedCurrent: 750,
-    lastMaintenance: '2025-01-10',
-    nextMaintenance: '2025-04-10',
+    lastMaintenance: '2025-09-10',
+    nextMaintenance: '2025-12-10',
     isOnline: true,
   },
   {
@@ -143,8 +143,8 @@ export const mockMicrogrids: Microgrid[] = [
     efficiency: 81.7,
     ratedVoltage: 415,
     ratedCurrent: 450,
-    lastMaintenance: '2024-12-25',
-    nextMaintenance: '2025-03-25',
+    lastMaintenance: '2025-07-25',
+    nextMaintenance: '2025-10-25',
     isOnline: true,
   }
 ];
@@ -156,7 +156,7 @@ export const mockAlerts: Alert[] = [
     microgridName: 'Berhampur South',
     type: 'critical',
     message: 'Battery SOC below 25% - Immediate attention required',
-    timestamp: '2025-01-15T14:30:00Z',
+    timestamp: '2025-10-01T14:30:00Z',
     isRead: false,
   },
   {
@@ -165,7 +165,7 @@ export const mockAlerts: Alert[] = [
     microgridName: 'Cuttack Industrial',
     type: 'warning',
     message: 'High battery temperature detected (38°C)',
-    timestamp: '2025-01-15T13:45:00Z',
+    timestamp: '2025-10-01T13:45:00Z',
     isRead: false,
   },
   {
@@ -174,7 +174,7 @@ export const mockAlerts: Alert[] = [
     microgridName: 'Balasore North',
     type: 'warning',
     message: 'Efficiency dropped below 85%',
-    timestamp: '2025-01-15T12:15:00Z',
+    timestamp: '2025-10-01T12:15:00Z',
     isRead: true,
   },
 ];
