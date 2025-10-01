@@ -77,7 +77,7 @@ export function AppSidebar() {
             </div>
             {!collapsed && (
               <div>
-                <h2 className="font-bold text-sidebar-foreground">GridWatch</h2>
+                <h2 className="font-bold text-sidebar-foreground">Microgrid</h2>
                 <p className="text-xs text-sidebar-foreground/70">
                   Monitoring System
                 </p>

@@ -26,9 +26,9 @@
     --success-foreground: 220 30% 95%;
     --success-glow: 142 50% 50%;
 
-    /* Subtle Amber - Warning */
-    --warning: 45 80% 45%;
-    --warning-foreground: 220 30% 95%;
+    /* Yellow - Warning */
+    --warning: 48 90% 55%;
+    --warning-foreground: 220 30% 10%;
 
     /* Subtle Pink - Critical */
     --critical: 340 70% 50%;

@@ -13,7 +13,9 @@ import {
   Gauge,
   Wifi,
   WifiOff,
-  Wrench
+  Wrench,
+  AlertTriangle,
+  TrendingUp
 } from "lucide-react";
 import { mockMicrogrids } from "@/lib/mockData";
 import { MetricCard } from "@/components/dashboard/MetricCard";
@@ -36,9 +38,12 @@ const MicrogridDetail = () => {
 
   const statusColors = {
     healthy: "default",
-    warning: "secondary", 
+    warning: "outline", 
     critical: "destructive"
   } as const;
+
+  const powerDifference = microgrid.predictedPower - microgrid.powerGenerated;
+  const needsMaintenance = microgrid.predictedPower > microgrid.powerGenerated;
 
   return (
     <div className="space-y-6">
@@ -207,6 +212,45 @@ const MicrogridDetail = () => {
                 <span className="text-sm font-medium">Next Maintenance</span>
                 <span className="text-sm">{new Date(microgrid.nextMaintenance).toLocaleDateString()}</span>
               </div>
+            </div>
+
+            <hr />
+
+            <div className="space-y-3">
+              <h4 className="font-medium flex items-center gap-2">
+                <TrendingUp className="h-4 w-4" />
+                Power Generation Analysis
+              </h4>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">Predicted Power</span>
+                  <span className="text-sm font-medium">{microgrid.predictedPower} kW</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">Actual Power</span>
+                  <span className="text-sm font-medium">{microgrid.powerGenerated} kW</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">Difference</span>
+                  <span className={`text-sm font-medium ${needsMaintenance ? 'text-destructive' : 'text-success'}`}>
+                    {powerDifference > 0 ? '-' : '+'}{Math.abs(powerDifference)} kW
+                  </span>
+                </div>
+              </div>
+              {needsMaintenance && (
+                <div className="mt-3 p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+                  <div className="flex items-start gap-2">
+                    <AlertTriangle className="h-4 w-4 text-destructive mt-0.5 flex-shrink-0" />
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium text-destructive">Maintenance Alert</p>
+                      <p className="text-xs text-muted-foreground">
+                        Actual power generation is {Math.abs(powerDifference)} kW below predicted capacity. 
+                        System maintenance recommended.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             <hr />

@@ -59,7 +59,7 @@ const SecurityPage = () => {
     {
       timestamp: "2025-10-01 14:32:10",
       event: "User login successful",
-      user: "admin@gridwatch.com",
+      user: "admin@microgrid.com",
       ip: "192.168.1.100",
       status: "success"
     },
@@ -87,7 +87,7 @@ const SecurityPage = () => {
     {
       timestamp: "2025-10-01 13:30:05",
       event: "Firewall rule updated",
-      user: "admin@gridwatch.com",
+      user: "admin@microgrid.com",
       ip: "192.168.1.100",
       status: "info"
     }

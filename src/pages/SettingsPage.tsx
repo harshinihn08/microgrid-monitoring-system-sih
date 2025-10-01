@@ -26,7 +26,7 @@ const SettingsPage = () => {
   const [settings, setSettings] = useState({
     // User Settings
     username: "admin",
-    email: "admin@gridwatch.com",
+    email: "admin@microgrid.com",
     timezone: "Asia/Kolkata",
     
     // Notification Settings
@@ -407,7 +407,7 @@ const SettingsPage = () => {
                 <div className="space-y-2">
                   <Label>API Endpoint</Label>
                   <Input 
-                    value="https://api.gridwatch.com/v1"
+                    value="https://api.microgrid.com/v1"
                     readOnly
                     className="bg-muted"
                   />

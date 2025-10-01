@@ -5,6 +5,7 @@ export interface Microgrid {
   coordinates: [number, number];
   status: 'healthy' | 'warning' | 'critical';
   powerGenerated: number; // kW
+  predictedPower: number; // kW (flag predicted)
   powerStored: number; // kWh
   powerDelivered: number; // kW
   batterySOC: number; // %
@@ -46,6 +47,7 @@ export const mockMicrogrids: Microgrid[] = [
     coordinates: [85.8245, 20.2961],
     status: 'healthy',
     powerGenerated: 450,
+    predictedPower: 440,
     powerStored: 780,
     powerDelivered: 420,
     batterySOC: 85,
@@ -64,6 +66,7 @@ export const mockMicrogrids: Microgrid[] = [
     coordinates: [85.8795, 20.4625],
     status: 'warning',
     powerGenerated: 320,
+    predictedPower: 380,
     powerStored: 560,
     powerDelivered: 385,
     batterySOC: 65,
@@ -82,6 +85,7 @@ export const mockMicrogrids: Microgrid[] = [
     coordinates: [85.8312, 19.8135],
     status: 'healthy',
     powerGenerated: 380,
+    predictedPower: 370,
     powerStored: 690,
     powerDelivered: 365,
     batterySOC: 78,
@@ -100,6 +104,7 @@ export const mockMicrogrids: Microgrid[] = [
     coordinates: [84.7941, 19.3149],
     status: 'critical',
     powerGenerated: 180,
+    predictedPower: 280,
     powerStored: 240,
     powerDelivered: 195,
     batterySOC: 22,
@@ -107,8 +112,8 @@ export const mockMicrogrids: Microgrid[] = [
     efficiency: 72.5,
     ratedVoltage: 415,
     ratedCurrent: 400,
-    lastMaintenance: '2025-06-10',
-    nextMaintenance: '2025-09-10',
+    lastMaintenance: '2025-08-15',
+    nextMaintenance: '2025-10-10',
     isOnline: false,
   },
   {
@@ -118,6 +123,7 @@ export const mockMicrogrids: Microgrid[] = [
     coordinates: [83.9712, 21.4669],
     status: 'healthy',
     powerGenerated: 520,
+    predictedPower: 500,
     powerStored: 890,
     powerDelivered: 485,
     batterySOC: 92,
@@ -136,6 +142,7 @@ export const mockMicrogrids: Microgrid[] = [
     coordinates: [86.9343, 21.4934],
     status: 'warning',
     powerGenerated: 280,
+    predictedPower: 320,
     powerStored: 420,
     powerDelivered: 310,
     batterySOC: 48,
@@ -176,6 +183,15 @@ export const mockAlerts: Alert[] = [
     message: 'Efficiency dropped below 85%',
     timestamp: '2025-10-01T12:15:00Z',
     isRead: true,
+  },
+  {
+    id: 'alert-004',
+    microgridId: 'mg-006',
+    microgridName: 'Balasore North',
+    type: 'info',
+    message: 'Predictive Alert: Battery SOC will drop below 30% in approximately 3 hours',
+    timestamp: '2025-10-01T14:00:00Z',
+    isRead: false,
   },
 ];
 
