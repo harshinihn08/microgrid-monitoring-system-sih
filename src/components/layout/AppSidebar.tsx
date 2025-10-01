@@ -25,7 +25,7 @@ const navigationItems = [
   {
     title: "Overview",
     items: [
-      { title: "Global Dashboard", url: "/", icon: LayoutDashboard },
+      { title: "Microgrid Network Overview", url: "/", icon: LayoutDashboard },
       { title: "Microgrids", url: "/microgrids", icon: Zap },
     ],
   },
